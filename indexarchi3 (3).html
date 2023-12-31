@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Popup</title>
+    <style>
+        body {
+            font-family: 'Monotype Corsiva', cursive;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #popup-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(182, 102, 210, 0.9); /* Lilac background */
+            color: black;
+            font-size: 40px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 1s, transform 1s;
+        }
+
+        #heart {
+            font-size: 80px;
+            color: red;
+            margin-top: 20px;
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="popup-container">
+    <p>I Love You So Much Archisman ~<br> From Your Coder GF Taniyaa</p>
+    <div id="heart">&#10084;&#65039;</div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const popupContainer = document.getElementById("popup-container");
+
+        // Show the popup
+        setTimeout(() => {
+            popupContainer.style.opacity = "1";
+            popupContainer.style.transform = "translateY(0)";
+        }, 1000); // 1000ms = 1s
+
+        // Hide the popup after 5 seconds
+        setTimeout(() => {
+            popupContainer.style.opacity = "0";
+            popupContainer.style.transform = "translateY(-100%)";
+        }, 5000); // 5000ms = 5s
+    });
+</script>
+
+</body>
+</html>
